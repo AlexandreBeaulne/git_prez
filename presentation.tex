@@ -111,6 +111,20 @@
 \end{frame}
 
 \begin{frame}[fragile]
+    \frametitle{\$ git config}
+    \begin{figure}[h!]
+        \begin{center}
+            \includegraphics[scale=0.7]{config.png}
+        \end{center}
+    \end{figure}
+    \begin{verbatim}
+$ git config --global user.email abeaulne@eclipseoptions.com
+$ git config --global user.name 'Alex Beaulne'
+    \end{verbatim}
+    is necessary to get started. \textbf{Use short email for proper integration with Stash}
+\end{frame}
+
+\begin{frame}[fragile]
     \frametitle{\$ git init}
     \begin{figure}[h!]
         \begin{center}
@@ -178,63 +192,29 @@ $ git clone remote_url
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{\$ git fetch}
+    \frametitle{\$ git status}
+    \begin{figure}[h!]
+        \begin{center}
+            \includegraphics[scale=0.7]{status.png}
+        \end{center}
+    \end{figure}
+    \begin{verbatim}
+$ git status
+    \end{verbatim}
+    shows which files on the current branch are untracked, modified and staged for commit
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{\$ git pull}
     \begin{figure}[h!]
         \begin{center}
             \includegraphics[scale=0.7]{pull.png}
         \end{center}
     \end{figure}
     \begin{verbatim}
-$ git fetch remote_name_or_url
+$ git pull remote_name_or_url branch_name
     \end{verbatim}
-    fetches (but does not apply) new commits from the remote Git repository
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{\$ git merge}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.6]{merge.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git merge [remote_name/]branch_name
-    \end{verbatim}
-    is used to merge a branch into the current one.
-\end{frame}
-
-\begin{frame}
-    \frametitle{\$ git merge}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.6]{merge.png}
-        \end{center}
-    \end{figure}
-    One can merge two branches of a local repository or (more often)
-    two branches across repositories
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{\$ git rebase}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.9]{rebase.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git rebase [remote_name/]branch_name
-    \end{verbatim}
-    is used to reorder local commits to appear after remote commits
-\end{frame}
-
-\begin{frame}
-    \frametitle{\$ git rebase}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.9]{rebase.png}
-        \end{center}
-    \end{figure}
-    \textbf{rebase should ONLY be used if local commits have NEVER been shared}
+    apply new commits from the remote Git repository to the local repository
 \end{frame}
 
 \begin{frame}[fragile]
@@ -275,6 +255,21 @@ $ git checkout branch_name
     is used to switch between branches
 \end{frame}
 
+\begin{frame}
+    \frametitle{two notes on Git commits}
+    I. A Git commit is `repository-wide'. It is a snapshot
+    of the complete repository at that point in time. This
+    is different to CVS per-file commits.
+\end{frame}
+
+\begin{frame}
+    \frametitle{two notes on Git commits}
+    II. Pushing a commit to a canonical Git repository
+    is a three stages process: (i) add (ii) commit (iii) push.
+    Unlike CVS, a Git commit does not push anything to a remote
+    repository. One needs to push to do so.
+\end{frame}
+
 \begin{frame}[fragile]
     \frametitle{\$ git add}
     \begin{figure}[h!]
@@ -312,19 +307,6 @@ $ git add [filename1 [filename2]...]
 $ git commit -m "commit msg JIRA-XXX"
     \end{verbatim}
     commits the changes previously added to staging area
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{\$ git status}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.7]{status.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git status
-    \end{verbatim}
-    shows which files on the current branch are untracked, modified and staged for commit
 \end{frame}
 
 \begin{frame}[fragile]
@@ -454,19 +436,16 @@ $ git push remote_name_or_url branch_name
 
 \begin{frame}
     \frametitle{Pull requests}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.25]{pull_request.png}
-        \end{center}
-    \end{figure}
+    demo
 \end{frame}
 
-\section{Ressources}
+\section{Resources}
 
 \begin{frame}
-    \frametitle{Ressources}
+    \frametitle{Resources}
     \begin{itemize}
         \item These slides are on Confluence (\url{http://confluence/display/~abeaulne/Intro+to+Git+presentation})
+        \item More detailed instructions Trading Systems team at \url{http://confluence/display/TSD/Setting+up+GIT}
         \item Atlassian has a great straightforward tutorial at \url{https://www.atlassian.com/git/}
     \end{itemize}
 \end{frame}
@@ -490,9 +469,7 @@ $ git push remote_name_or_url branch_name
     \begin{verbatim}
 ~$ git clone http://stash/scm/core/practice.git
 ~$ cd practice/
-~/practice$ git branch develop
 ~/practice$ git checkout develop
-~/practice$ git rebase origin/develop
 ~/practice$ git branch alexb
 ~/practice$ git checkout alexb
 ~/practice$ vim README.txt
