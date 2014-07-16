@@ -255,6 +255,32 @@ $ git checkout branch_name
     is used to switch between branches
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{\$ git diff}
+    \begin{figure}[h!]
+        \begin{center}
+            \includegraphics[scale=1.2]{diff.png}
+        \end{center}
+    \end{figure}
+    \begin{verbatim}
+$ git diff [filename1 [filename2]...]
+    \end{verbatim}
+    shows lines that have changed since latest commit on branch
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{\$ git diff}
+    \begin{figure}[h!]
+        \begin{center}
+            \includegraphics[scale=1.2]{diff.png}
+        \end{center}
+    \end{figure}
+    \begin{verbatim}
+$ git diff [filename1 [filename2]...]
+    \end{verbatim}
+    If no file is specified, show diff for all modified files on the current branch
+\end{frame}
+
 \begin{frame}
     \frametitle{two notes on Git commits}
     I. A Git commit is `repository-wide'. It is a snapshot
@@ -284,19 +310,6 @@ $ git add [filename1 [filename2]...]
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{\$ git add}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=0.7]{add.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git add [filename1 [filename2]...]
-    \end{verbatim}
-    If no file is specified, all modified files on the current branch are added to staging area
-\end{frame}
-
-\begin{frame}[fragile]
     \frametitle{\$ git commit}
     \begin{figure}[h!]
         \begin{center}
@@ -307,32 +320,6 @@ $ git add [filename1 [filename2]...]
 $ git commit -m "commit msg JIRA-XXX"
     \end{verbatim}
     commits the changes previously added to staging area
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{\$ git diff}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=1.2]{diff.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git diff [filename1 [filename2]...]
-    \end{verbatim}
-    shows lines that have changed since latest commit on branch
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{\$ git diff}
-    \begin{figure}[h!]
-        \begin{center}
-            \includegraphics[scale=1.2]{diff.png}
-        \end{center}
-    \end{figure}
-    \begin{verbatim}
-$ git diff [filename1 [filename2]...]
-    \end{verbatim}
-    If no file is specified, show diff for all modified files on the current branch
 \end{frame}
 
 \begin{frame}[fragile]
